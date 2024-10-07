@@ -1,6 +1,16 @@
+import Slider from "../Components/Slider"
+import AboutProducts from "../Components/AboutProducts"
+import LatestNews from "../Components/LatestNews"
+import OurTeam from "../Components/OurTeam"
+
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+        <Slider />
+        <AboutProducts />
+        <LatestNews />
+        <OurTeam />
+    </>
   )
 }
 
