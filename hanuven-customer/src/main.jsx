@@ -1,6 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 import "./index.css";
 import Home from "./Pages/Home";
 import Cart from "./Pages/Cart";
