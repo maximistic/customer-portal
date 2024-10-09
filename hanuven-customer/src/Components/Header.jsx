@@ -1,16 +1,16 @@
-import { Link as ScrollLink } from 'react-scroll';
-import { Link as RouterLink } from 'react-router-dom';
-import logo from '../Components/Assets/logo.png'; 
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import logo from "../Components/Assets/logo.png";
 
 function Header() {
+  const navigate = useNavigate();
+
   return (
     <header className="bg-gray-100 py-5 px-10">
       <nav className="flex items-center justify-between">
-        <div className="logo">
-          <RouterLink to="/">
-            <img src={logo} alt="Logo" className="h-12" />
-          </RouterLink>
+        <div className="logo" onClick={() => navigate("/")}>
+          <img src={logo} alt="Logo" className="h-12" />
         </div>
         <div className="relative flex items-center">
           <input
@@ -21,16 +21,20 @@ function Header() {
           <i className="fas fa-search absolute right-4 text-gray-500"></i>
         </div>
         <div className="flex items-center space-x-4">
-          <RouterLink to="/">
-            <button className="font-bold text-lg text-gray-700 hover:text-blue-500 transition duration-300">
-              Home
-            </button>
-          </RouterLink>
-          <RouterLink to="/SampleProductPage">
-            <button className="font-bold text-lg text-gray-700 hover:text-blue-500 transition duration-300">
-              Shop
-            </button>
-          </RouterLink>
+          <button
+            className="font-bold text-lg text-gray-700 hover:text-blue-500 transition duration-300"
+            onClick={() => navigate("/")}
+          >
+            Home
+          </button>
+
+          <button
+            className="font-bold text-lg text-gray-700 hover:text-blue-500 transition duration-300"
+            onClick={() => navigate("/ProductPage")}
+          >
+            Shop
+          </button>
+
           <ScrollLink to="about" smooth={true} duration={500}>
             <button className="font-bold text-lg text-gray-700 hover:text-blue-500 transition duration-300">
               About
