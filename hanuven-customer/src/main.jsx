@@ -8,7 +8,6 @@ import Home from "./Pages/Home";
 import Cart from "./Pages/Cart";
 import ProductPage from "./Pages/ProductPage";
 import Contact from "./Pages/Contact";
-import News from "./Components/LatestNews";
 
 const router = createBrowserRouter([
   {

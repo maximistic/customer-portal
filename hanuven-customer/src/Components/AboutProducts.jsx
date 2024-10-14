@@ -1,6 +1,8 @@
 import slider from '../Components/Assets/slider1.jpg';
+import { useNavigate } from "react-router-dom";
 
 function AboutProducts() {
+  const navigate = useNavigate();
   return (
     <section className="bg-gray-100 py-16" id="about">
       <div className="max-w-5xl mx-auto px-4">
@@ -14,7 +16,7 @@ function AboutProducts() {
             <p className="mb-4 leading-relaxed">
               From our signature Skin Care Oil to our specialized Hair Oil, each product is designed to enhance your natural beauty and promote healthy, glowing skin.
             </p>
-            <button className="bg-blue-600 text-white py-2 px-4 text-lg rounded transition duration-300 hover:bg-blue-500">
+            <button className="bg-blue-600 text-white py-2 px-4 text-lg rounded transition duration-300 hover:bg-blue-500" onClick={() => navigate("/ProductPage")}>
               Shop
             </button>
           </div>
