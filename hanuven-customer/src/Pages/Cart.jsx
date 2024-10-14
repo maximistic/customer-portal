@@ -3,6 +3,8 @@ import { useCart } from "./CartContext";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import Footer from "../Components/Footer";
+import Header from "../Components/Header";
 import "./Cart.css";
 
 const Cart = () => {
@@ -36,6 +38,9 @@ const Cart = () => {
   };
 
   return (
+    <div>
+    <Header />
+     
     <div className={"cart-container"}>
       <div className="cart-items">
         {cart.length > 0 && (
@@ -100,7 +105,7 @@ const Cart = () => {
             <strong>Grand Total</strong>
             <strong>₹{calculateTotal().toFixed(2)}</strong>
           </div>
-          <button className="checkout-btn" onClick={() => navigate("/checkout")}>CHECKOUT</button>
+          <button className="checkout-btn" onClick={() => navigate("/Checkout")}>CHECKOUT</button>
         </div>
       )}
   
@@ -111,6 +116,8 @@ const Cart = () => {
         </div>
         <button onClick={handleContinueShopping}>CONTINUE SHOPPING</button>
       </div>
+    </div>
+    <Footer />
     </div>
   );
 };

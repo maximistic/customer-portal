@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useCart } from "./CartContext";
+import { useNavigate } from 'react-router-dom'; 
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 
@@ -100,6 +101,7 @@ const ProductInfo = ({ product }) => {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [isWishlisted, setIsWishlisted] = useState(false);
+  const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const cartItem = {
@@ -114,6 +116,37 @@ const ProductInfo = ({ product }) => {
   };
 
 
+  const handleBuyNow = () => {
+    let price;
+    if (typeof product.ProductPrice === 'string') {
+      // If it's a string, try to remove non-numeric characters and parse
+      price = parseFloat(product.ProductPrice.replace(/[^\d.]/g, ''));
+    } else if (typeof product.ProductPrice === 'number') {
+      // If it's already a number, use it directly
+      price = product.ProductPrice;
+    } else {
+      console.error('Invalid price format:', product.ProductPrice);
+      price = 0; // Default to 0 if the price is in an unexpected format
+    }
+
+    if (isNaN(price)) {
+      console.error('Failed to parse price:', product.ProductPrice);
+      price = 0; // Default to 0 if parsing fails
+    }
+
+    const productData = {
+      product: {
+        id: product.ProductID,
+        name: product.ProductName,
+        price: price,
+        quantity: quantity,
+        image: product.ProductImage || "default-image-url.jpg",
+      }
+    };
+    console.log("Navigating to checkout with product data:", productData);
+    navigate('/checkout', { state: productData });
+  };
+  
   const handleWishlist = () => {
     setIsWishlisted(!isWishlisted);
   };
@@ -158,7 +191,9 @@ const ProductInfo = ({ product }) => {
       </button>
 
       <div className="flex space-x-4 mt-4">
-        <button className="w-full py-2 bg-gray-700 text-white rounded-md hover:bg-black transition-all">
+        <button className="w-full py-2 bg-gray-700 text-white rounded-md hover:bg-black transition-all"
+         onClick={handleBuyNow} 
+        >
           Buy Now
         </button>
         <button
