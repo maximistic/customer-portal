@@ -197,7 +197,7 @@ const ProductPage = () => {
     // Fetch products from the API
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://13.127.100.128:3000/products");
+        const response = await fetch("https://api.hanuven.in/products");
         const data = await response.json();
         setProducts(data);
       } catch (error) {
