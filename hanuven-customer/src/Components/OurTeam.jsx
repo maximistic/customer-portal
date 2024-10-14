@@ -3,7 +3,7 @@ import ram from '../Components/Assets/RamKumar.jpg';
 
 function OurTeam() {
   const teamMembers = [
-    { name: 'Ram Kumar', role: 'CEO', image: ram, desc: 'Dr. K.R. Ramkumar holds a Ph.D. in Computer Science and Engineering, awarded by Anna University, Chennai, India. With a remarkable 22 years of teaching and 15 years of research experience, his expertise spans various domains, notably Network Security, Cryptography, and Post Quantum Cryptography. Dr. Ramkumar currently serves as an Professor at Chitkara University, Punjab.' },
+    { name: 'Ram Kumar', role: 'CEO', image: ram, desc: 'Dr. K.R. Ramkumar holds a Ph.D. in Computer Science and Engineering, awarded by Anna University, Chennai, India. With a remarkable 22 years of teaching and 15 years of research experience, his expertise spans various domains, notably Network Security, Cryptography, and Post Quantum Cryptography. Dr. Ramkumar currently serves as an Professor at Chitkara University, Punjab. He dedicates himself to analyzing Ayurvedic remedies for chronic illnesses while infusing them with scientific insights.Additionally, He is the founder of Hanuven Healthcare Products Private Limited, his own startup that specializes in introducing skincare products derived from herbal compositions and formulations.' },
     { name: '', role: 'CTO', image: '', desc: 'Updating...' },
     { name: '', role: 'CFO', image: '', desc: 'Updating...' },
     { name: '', role: 'Marketing', image: '', desc: 'Updating...' },
