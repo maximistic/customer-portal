@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useCart } from "./CartContext";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 
@@ -95,14 +96,23 @@ const ImageCarousel = ({ images }) => {
   );
 };
 
-// Product Info Component
 const ProductInfo = ({ product }) => {
+  const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [isWishlisted, setIsWishlisted] = useState(false);
 
   const handleAddToCart = () => {
-    alert("Added to cart!");
+    const cartItem = {
+      id: product.ProductID, // Use ProductID instead of id
+      name: product.ProductName,
+      price: parseFloat(product.ProductPrice), // Ensure price is a number
+      quantity: quantity,
+      image: product.ProductImage || "default-image-url.jpg" // Use a default image if not available
+    };
+    addToCart(cartItem);
+    alert(`${product.ProductName} added to cart!`);
   };
+
 
   const handleWishlist = () => {
     setIsWishlisted(!isWishlisted);
@@ -242,7 +252,7 @@ const ProductPage = () => {
           </button>
         </div>
         <ProductFeatures product={currentProduct} />
-        <ProductInfo product={currentProduct} />
+        <ProductInfo product={products[currentProductIndex]} />
       </div>
       <Footer />
     </div>

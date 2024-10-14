@@ -1,0 +1,220 @@
+.cart-container {
+    max-width: 1800px;
+    margin: 0 80px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .cart-items {
+    width: 65%;
+  }
+  
+  .empty-cart-message {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .empty-cart .cart-items {
+    display: none;
+  }
+  
+  /* Header row for Product Name, Price, Quantity, and Action */
+  .cart-header {
+    display: flex;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    font-weight: bold;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  .header-item {
+    text-align: center;
+  }
+  
+  /* Consistent spacing in the header */
+  .header-item:nth-child(1) {
+    flex: 3; /* Product Name */
+  }
+  
+  .header-item:nth-child(2) {
+    flex: 1; /* Price */
+  }
+  
+  .header-item:nth-child(3) {
+    flex: 1; /* Quantity */
+  }
+  
+  .header-item:nth-child(4) {
+    flex: 1; /* Action */
+  }
+  
+  /* Cart item row */
+  .cart-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .cart-item-details {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+  
+  /* Ensure the item names have a consistent width to prevent alignment issues */
+  .item-name {
+    font-weight: bold;
+    font-size: 16px;
+    flex: 3; /* Allow more space for the product name */
+    min-width: 200px;
+    margin-right: 20px;
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Align price properly with the header */
+  .item-price {
+    font-size: 16px;
+    flex: 1;
+    text-align: center;
+    margin-right: 10px; /* Adjust to align with header */
+  }
+  
+  /* Align quantity controls properly with the header */
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 5px;
+    flex: 1;
+    justify-content: center; /* Center align the quantity controls */
+    margin-right: 40px; /* Adjust to align with header */
+  }
+  
+  .quantity-controls button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .quantity-input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    font-size: 14px;
+    margin: 0 10px;
+  }
+  
+  /* Align remove button properly with the header */
+  .remove-btn {
+    background-color: transparent;
+    border: none;
+    color: #999;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s;
+    justify-content: center;
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .remove-btn .trash-icon {
+    margin-left: 8px;
+  }
+  
+  .remove-btn:hover {
+    color: red;
+  }
+  
+  /* Order Summary section */
+  .order-summary {
+    width: 30%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .order-summary h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .checkout-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-top: 20px;
+  }
+  
+  .continue-shopping {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .continue-shopping .text-content {
+    margin-right: 100px;
+  }
+  
+  .continue-shopping h4 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .continue-shopping p {
+    margin: 5px 0 0;
+    font-size: 13px;
+  }
+  
+  .continue-shopping button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  
