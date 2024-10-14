@@ -3,9 +3,9 @@ import ram from '../Components/Assets/RamKumar.jpg';
 function OurTeam() {
   const teamMembers = [
     { name: 'Ram Kumar', role: 'CEO', image: ram },
-    { name: 'Jane Smith', role: 'CTO', image: ram },
-    { name: 'Mike Johnson', role: 'Designer', image: ram },
-    { name: 'Emily Brown', role: 'Marketing', image: ram },
+    { name: '', role: 'CTO', image: '' },
+    { name: '', role: 'CFO', image: '' },
+    { name: '', role: 'Marketing', image: '' },
   ];
 
   return (
